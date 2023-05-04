@@ -221,6 +221,17 @@ export class DebugCommands implements IAmDisposable {
 				type: "dart",
 			});
 		}));
+
+		this.disposables.push(vs.commands.registerCommand("dart.embeddedTheiaAttach", (vmServiceUri: String) => {
+			console.log('RECEIVED EMBEDDED THEIA ATTACH REQUEST WITH', vmServiceUri);
+			vs.debug.startDebugging(undefined, {
+				name: "Dart: Attach to Process",
+				request: "attach",
+				type: "dart",
+				vmServiceUri: vmServiceUri,
+			});
+		}));
+
 		this.disposables.push(vs.commands.registerCommand("flutter.attachProcess", () => {
 			vs.debug.startDebugging(undefined, {
 				name: "Flutter: Attach to Process",
