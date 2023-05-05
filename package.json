@@ -109,6 +109,11 @@
 		],
 		"commands": [
 			{
+				"command": "dart.embeddedTheiaAttach",
+				"title": "Theia attach",
+				"category": "Dart"
+			},
+			{
 				"command": "flutter.createProject",
 				"title": "New Project",
 				"category": "Flutter"
